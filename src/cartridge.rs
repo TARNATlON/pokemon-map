@@ -22,7 +22,7 @@ macro_rules! impl_read_bytes {
     )+)
 }
 
-/// Binary-value extensions to `Read`.
+/// Binary-value extensions to [`Read`].
 pub trait ReadBytes: Read {
     impl_read_bytes! {u8 i8 u16 i16 u32 i32 u64 i64 f32 f64}
 
@@ -71,7 +71,7 @@ macro_rules! impl_read_bytes_ext {
     )+)
 }
 
-/// Binary-value extensions to `FileExt`.
+/// Binary-value extensions to [`FileExt`].
 ///
 /// The offset taken by the trait functions is relative to the start of the file
 /// and thus independent from the current cursor. The current file cursor is
@@ -108,7 +108,7 @@ impl Cartridge {
     }
 }
 
-/// Returns early with an `io::Error`.
+/// Returns early with an [`io::Error`].
 ///
 /// Inspired by the `bail!` macro from the [anyhow](https://docs.rs/anyhow/latest/src/anyhow/macros.rs.html#56-66)
 /// library.

@@ -9,7 +9,7 @@ use std::path::{Path, PathBuf};
 /// An iterator that traverses the entries of a [filesystem](`Filesystem`)
 /// in pre-order.
 ///
-/// If cycles are present, then `FsTraversal` is an infinite iterator.
+/// If cycles are present, then [`FsTraversal`] is an infinite iterator.
 pub struct FsTraversal<'a> {
     depth: usize,
     dir_files: VecDeque<&'a Entry>,
@@ -20,7 +20,7 @@ impl<'a> FsTraversal<'a> {
     /// Returns an iterator that traverses filesystem entries
     /// recursively, starting at a given directory.
     ///
-    /// The iterator returns `None` if the directory is empty. Otherwise,
+    /// The iterator returns [`None`] if the directory is empty. Otherwise,
     /// returns a pair containing the depth of the entry relative to the
     /// given directory and the entry itself.
     pub fn new(start: &'a Directory) -> Self {
